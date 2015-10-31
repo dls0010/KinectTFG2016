@@ -7,14 +7,23 @@ using System.Data.SqlClient;
 
 namespace KinectTFG2016
 {
+    /// <summary>
+    /// Clase usada para iniciar la conexión con la Base de datos KinectBD.
+    /// </summary>
     class BDComun
     {
+        /// <summary>
+        /// Metodo para obtener la conexion con la base de datos.
+        /// </summary>
+        /// <returns>
+        /// conn: Conexion con la base de datos.
+        /// </returns>
         public static SqlConnection ObtnerConexion()
         {
-            SqlConnection Conn = new SqlConnection(@"Data source=DAVID-PORTATIL\DAVID; Initial Catalog = KinectBD; Integrated Security=True");
-            Conn.Open();
+            SqlConnection conn = new SqlConnection(@"Data source=DAVID-PORTATIL\DAVID; Initial Catalog = KinectBD; Integrated Security=True");
+            conn.Open();
 
-            return Conn;
+            return conn;
         }
     }
 }
