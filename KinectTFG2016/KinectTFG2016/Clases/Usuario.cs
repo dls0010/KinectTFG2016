@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace KinectTFG2016
+namespace KinectTFG2016.Clases
 {
     /// <summary>
     /// Clase Usuario que comprueba el acceso tanto con nombre de usuario como con la contraseña.
