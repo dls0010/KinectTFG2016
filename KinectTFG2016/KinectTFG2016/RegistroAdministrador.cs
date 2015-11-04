@@ -13,8 +13,10 @@ namespace KinectTFG2016
 {
     public partial class RegistroAdministrador : Form
     {
-        public RegistroAdministrador()
+        string nombreUsuario;
+        public RegistroAdministrador(string usuario)
         {
+            nombreUsuario = usuario;
             InitializeComponent();
         }
 
@@ -25,7 +27,7 @@ namespace KinectTFG2016
         /// <param name="e"></param>  Argumento del evento.
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
-            if (Administrador.registrarAdministrador(textBoxPaciente.Text, textBoxApellidos.Text, textBoxNIF.Text, textBoxNacimiento.Text) > 0)
+            if (Administrador.registrarAdministrador(textBoxPaciente.Text, textBoxApellidos.Text, nombreUsuario, textBoxNIF.Text, textBoxNacimiento.Text) > 0)
             {
                 MessageBox.Show("Administrador registrado con exito.");
                 this.Close();

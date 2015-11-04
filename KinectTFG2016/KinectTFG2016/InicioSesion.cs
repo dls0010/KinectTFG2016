@@ -30,6 +30,17 @@ namespace KinectTFG2016
             if (Usuario.Autentificar(textBoxUsuario.Text, textBoxContraseña.Text) > 0)
             {
                 MessageBox.Show("Usuario correcto");
+                string tipoUsuario = Usuario.obtenerTipo(textBoxUsuario.Text);
+                if (tipoUsuario == "Paciente")
+                {
+                    InicioPaciente inicioPaciente = new InicioPaciente(textBoxUsuario.Text);
+                    inicioPaciente.Show();
+                }
+                if (tipoUsuario == "Terapeuta")
+                {
+                    InicioTerapeuta inicioTerapeuta = new InicioTerapeuta(textBoxUsuario.Text);
+                    inicioTerapeuta.Show();
+                }
 
             }
             else

@@ -12,13 +12,24 @@ namespace KinectTFG2016.Clases
     /// </summary>
     class Terapeuta
     {
-
-        public static int registrarTerapeuta(string pNombre, string pApellidos, string pNIF, string pNacimiento)
+        /// <summary>
+        /// Metodo que permite registrar al Terapeuta en la base de datos
+        /// </summary>
+        /// <param name="pNombre"></param> Nombre del Terapeuta
+        /// <param name="pApellidos"></param> Apellidos del Terapeuta
+        /// <param name="pNombreUsuario"></param> Nombre Usuario del Terapeuta.
+        /// <param name="pNIF"></param> Nif del Terapeuta.
+        /// <param name="pNacimiento"></param> Nacimiento del Terapeuta.
+        /// <returns>
+        /// 0: Ha ocurrido un fallo. No se ha llevado a cabo la inserción.
+        /// != 0 Proceso realizado correctamente.
+        /// </returns>
+        public static int registrarTerapeuta(string pNombre, string pApellidos, string pNombreUsuario, string pNIF, string pNacimiento)
         {
             int resultado = 0;
 
             SqlConnection conn = BDComun.ObtnerConexion();
-            SqlCommand comando = new SqlCommand(string.Format("Insert Into Terapeutas (nombreTerapeuta,apellidosTerapeuta,nifTerapeuta,nacimientoTerapeuta) values ('{0}','{1}','{2}','{3}')", pNombre, pApellidos, pNIF, pNacimiento), conn);
+            SqlCommand comando = new SqlCommand(string.Format("Insert Into Terapeutas (nombreTerapeuta,apellidosTerapeuta,usuario,nifTerapeuta,nacimientoTerapeuta) values ('{0}','{1}','{2}','{3}','{4}')", pNombre, pApellidos, pNombreUsuario,pNIF, pNacimiento), conn);
 
             resultado = comando.ExecuteNonQuery();
             conn.Close();

@@ -48,7 +48,14 @@
   <ItemGroup>
     <Compile Include="BDComun.cs" />
     <Compile Include="Clases\Administrador.cs" />
+    <Compile Include="Clases\Relacion.cs" />
     <Compile Include="Clases\Terapeuta.cs" />
+    <Compile Include="InicioPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioPaciente.Designer.cs">
+      <DependentUpon>InicioPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,8 +63,39 @@
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Paciente.cs" />
+    <Compile Include="InicioTerapeuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioTerapeuta.Designer.cs">
+      <DependentUpon>InicioTerapeuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KinectBDDataSet.cs">
+      <DependentUpon>KinectBDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="KinectBDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KinectBDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecursosTerapeuta\AdquerirPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecursosTerapeuta\AdquerirPacientes.Designer.cs">
+      <DependentUpon>AdquerirPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosTerapeuta\PacientesDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PacientesDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosTerapeuta\PacientesTerapeuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecursosTerapeuta\PacientesTerapeuta.Designer.cs">
+      <DependentUpon>PacientesTerapeuta.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,8 +121,14 @@
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
+    <EmbeddedResource Include="InicioPaciente.resx">
+      <DependentUpon>InicioPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioTerapeuta.resx">
+      <DependentUpon>InicioTerapeuta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +140,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecursosTerapeuta\AdquerirPacientes.resx">
+      <DependentUpon>AdquerirPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosTerapeuta\PacientesTerapeuta.resx">
+      <DependentUpon>PacientesTerapeuta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistroAdministrador.resx">
       <DependentUpon>RegistroAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +158,17 @@
     <EmbeddedResource Include="RegistroUsuario.resx">
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="KinectBDDataSet.xsc">
+      <DependentUpon>KinectBDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KinectBDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KinectBDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KinectBDDataSet.xss">
+      <DependentUpon>KinectBDDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,6 +178,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RecursosTerapeuta\PacientesDatos.xsc">
+      <DependentUpon>PacientesDatos.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosTerapeuta\PacientesDatos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PacientesDatos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RecursosTerapeuta\PacientesDatos.xss">
+      <DependentUpon>PacientesDatos.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -124,6 +196,7 @@
   <ItemGroup>
     <None Include="images\Kinect_Logo.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

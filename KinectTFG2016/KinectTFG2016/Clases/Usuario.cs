@@ -51,7 +51,7 @@ namespace KinectTFG2016.Clases
         {
             int resultado = -1;
             SqlConnection conn = BDComun.ObtnerConexion();
-            SqlCommand comando = new SqlCommand(string.Format("Select * from Usuarios where Usuario = '{0}' and PwdCompare('{1}',Contraseña) = 1 ", pUsuario, pContraseña), conn);
+            SqlCommand comando = new SqlCommand(string.Format("Select * from Usuarios where usuario = '{0}' and PwdCompare('{1}',contraseña) = 1 ", pUsuario, pContraseña), conn);
 
             SqlDataReader reader = comando.ExecuteReader();
 
@@ -61,6 +61,28 @@ namespace KinectTFG2016.Clases
             }
             conn.Close();
             return resultado;
+        }
+
+        /// <summary>
+        /// Metodo que devuelve el tipo de usuario.
+        /// </summary>
+        /// <param name="pUsuario"></param> nombre de usuario.
+        /// <returns>
+        /// string: tipo de usuario.
+        /// </returns>
+        public static string obtenerTipo(String pUsuario)
+        {
+            string tipoUsuario = " ";
+            SqlConnection conn = BDComun.ObtnerConexion();
+            SqlCommand comando = new SqlCommand(string.Format("Select tipoUsuario from Usuarios where usuario like '{0}' ", pUsuario), conn);
+            SqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                tipoUsuario = reader.GetString(0);
+            }
+            reader.Close();
+            return tipoUsuario;
+
         }
 
         /// <summary>

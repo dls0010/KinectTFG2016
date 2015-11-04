@@ -42,6 +42,8 @@
             this.textBoxEstado = new System.Windows.Forms.TextBox();
             this.textBoxNacimiento = new System.Windows.Forms.TextBox();
             this.calendarioDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxTelefono = new System.Windows.Forms.TextBox();
+            this.labelTelefono = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
@@ -104,7 +106,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(153, 255);
+            this.buttonCancelar.Location = new System.Drawing.Point(153, 295);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 29;
@@ -114,7 +116,7 @@
             // 
             // buttonRegistrar
             // 
-            this.buttonRegistrar.Location = new System.Drawing.Point(70, 255);
+            this.buttonRegistrar.Location = new System.Drawing.Point(70, 295);
             this.buttonRegistrar.Name = "buttonRegistrar";
             this.buttonRegistrar.Size = new System.Drawing.Size(75, 23);
             this.buttonRegistrar.TabIndex = 28;
@@ -125,7 +127,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 220);
+            this.label6.Location = new System.Drawing.Point(39, 260);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 41;
@@ -134,7 +136,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(41, 156);
+            this.label7.Location = new System.Drawing.Point(41, 196);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 13);
             this.label7.TabIndex = 39;
@@ -142,32 +144,52 @@
             // 
             // textBoxEstado
             // 
-            this.textBoxEstado.Location = new System.Drawing.Point(143, 217);
+            this.textBoxEstado.Location = new System.Drawing.Point(143, 257);
             this.textBoxEstado.Name = "textBoxEstado";
             this.textBoxEstado.Size = new System.Drawing.Size(100, 20);
             this.textBoxEstado.TabIndex = 42;
-            this.textBoxEstado.Text = "Tratándose";
+            this.textBoxEstado.Text = "Libre";
+            this.textBoxEstado.TextChanged += new System.EventHandler(this.textBoxEstado_TextChanged);
             // 
             // textBoxNacimiento
             // 
-            this.textBoxNacimiento.Location = new System.Drawing.Point(143, 182);
+            this.textBoxNacimiento.Location = new System.Drawing.Point(143, 222);
             this.textBoxNacimiento.Name = "textBoxNacimiento";
             this.textBoxNacimiento.Size = new System.Drawing.Size(200, 20);
             this.textBoxNacimiento.TabIndex = 44;
             // 
             // calendarioDate
             // 
-            this.calendarioDate.Location = new System.Drawing.Point(143, 156);
+            this.calendarioDate.Location = new System.Drawing.Point(143, 196);
             this.calendarioDate.Name = "calendarioDate";
             this.calendarioDate.Size = new System.Drawing.Size(200, 20);
             this.calendarioDate.TabIndex = 45;
             this.calendarioDate.ValueChanged += new System.EventHandler(this.calendarioDate_ValueChanged);
+            // 
+            // textBoxTelefono
+            // 
+            this.textBoxTelefono.Location = new System.Drawing.Point(143, 153);
+            this.textBoxTelefono.MaxLength = 9;
+            this.textBoxTelefono.Name = "textBoxTelefono";
+            this.textBoxTelefono.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTelefono.TabIndex = 47;
+            // 
+            // labelTelefono
+            // 
+            this.labelTelefono.AutoSize = true;
+            this.labelTelefono.Location = new System.Drawing.Point(41, 156);
+            this.labelTelefono.Name = "labelTelefono";
+            this.labelTelefono.Size = new System.Drawing.Size(49, 13);
+            this.labelTelefono.TabIndex = 46;
+            this.labelTelefono.Text = "Telefono";
             // 
             // RegistroPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 331);
+            this.Controls.Add(this.textBoxTelefono);
+            this.Controls.Add(this.labelTelefono);
             this.Controls.Add(this.calendarioDate);
             this.Controls.Add(this.textBoxNacimiento);
             this.Controls.Add(this.textBoxEstado);
@@ -205,5 +227,7 @@
         private System.Windows.Forms.TextBox textBoxEstado;
         private System.Windows.Forms.TextBox textBoxNacimiento;
         private System.Windows.Forms.DateTimePicker calendarioDate;
+        private System.Windows.Forms.TextBox textBoxTelefono;
+        private System.Windows.Forms.Label labelTelefono;
     }
 }

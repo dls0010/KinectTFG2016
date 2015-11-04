@@ -14,8 +14,10 @@ namespace KinectTFG2016
 {
     public partial class RegistroTerapeuta : Form
     {
-        public RegistroTerapeuta()
+        string nombreUsuario;
+        public RegistroTerapeuta(string usuario)
         {
+            nombreUsuario = usuario;
             InitializeComponent();
         }
 
@@ -26,7 +28,7 @@ namespace KinectTFG2016
         /// <param name="e"></param>  Argumento del evento.
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
-            if (Terapeuta.registrarTerapeuta(textBoxPaciente.Text, textBoxApellidos.Text, textBoxNIF.Text, textBoxNacimiento.Text) > 0)
+            if (Terapeuta.registrarTerapeuta(textBoxPaciente.Text, textBoxApellidos.Text, nombreUsuario, textBoxNIF.Text, textBoxNacimiento.Text) > 0)
             {
                 MessageBox.Show("Terapeuta registrado con exito.");
                 this.Close();

@@ -16,8 +16,10 @@ namespace KinectTFG2016
     /// </summary>
     public partial class RegistroPaciente : Form
     {
-        public RegistroPaciente()
+        string nombreUsuario;
+        public RegistroPaciente(string usuario)
         {
+            nombreUsuario = usuario;
             InitializeComponent();
         }
         /// <summary>
@@ -37,7 +39,7 @@ namespace KinectTFG2016
         /// <param name="e"></param> Argumento del evento.
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
-            if (Paciente.RegistrarPaciente(textBoxPaciente.Text, textBoxApellidos.Text, textBoxNIF.Text, textBoxNacimiento.Text, textBoxEstado.Text) > 0)
+            if (Paciente.RegistrarPaciente(textBoxPaciente.Text, textBoxApellidos.Text,nombreUsuario, textBoxNIF.Text,textBoxTelefono.Text, textBoxNacimiento.Text, textBoxEstado.Text) > 0)
             {
                 MessageBox.Show("Paciente registrado con exito.");
                 this.Close();
@@ -55,6 +57,11 @@ namespace KinectTFG2016
         private void calendarioDate_ValueChanged(object sender, EventArgs e)
         {
             textBoxNacimiento.Text = calendarioDate.Value.ToString("yyyy/MM/dd");
+        }
+
+        private void textBoxEstado_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
