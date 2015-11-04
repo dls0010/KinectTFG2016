@@ -58,10 +58,5 @@ namespace KinectTFG2016
         {
             textBoxNacimiento.Text = calendarioDate.Value.ToString("yyyy/MM/dd");
         }
-
-        private void textBoxEstado_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -16,7 +16,10 @@ namespace KinectTFG2016.RecursosTerapeuta
     /// </summary>
     public partial class PacientesTerapeuta : Form
     {
-        string nombreTerapeuta;
+        /// <summary>
+        /// Formulario para visualizar que relaciones tiene asignado un Terapeuta. 
+        /// </summary>
+        string nombreTerapeuta = null;
         DataTable tablaPacientes;
         PacientesDatos relaciones;
         public PacientesTerapeuta(string nombre)
@@ -32,11 +35,11 @@ namespace KinectTFG2016.RecursosTerapeuta
         /// <param name="e"></param> Eventos del formulario.
         private void PacientesTerapeuta_Load(object sender, EventArgs e)
         {
-            textBoxNombreTerapeuta.Text = nombreTerapeuta;
             tablaPacientes = Relacion.getRelaciones();
             relaciones = new PacientesDatos();
             relaciones.Tables.Add(tablaPacientes);
             dataGridView1.DataSource = relaciones.Tables[0];
+            textBoxNombreTerapeuta.Text = nombreTerapeuta;
         }
 
         /// <summary>
@@ -46,7 +49,9 @@ namespace KinectTFG2016.RecursosTerapeuta
         /// <param name="e"></param> Eventos del nombre.
         private void textBoxNombreTerapeuta_TextChanged(object sender, EventArgs e)
         {
-            relaciones.Tables[0].DefaultView.RowFilter = (string.Format("nombreTerapeuta like '{0}'",textBoxNombreTerapeuta.Text));
+            
+            //relaciones.Tables[0].DefaultView.RowFilter = ("'nombreTerapeuta = '"+ textBoxNombreTerapeuta.Text+"%'");
+            relaciones.Tables[0].DefaultView.RowFilter = string.Format("nombreTerapeuta like '{0}'",textBoxNombreTerapeuta.Text);
             dataGridView1.DataSource = relaciones.Tables[0].DefaultView;
         }
     }
