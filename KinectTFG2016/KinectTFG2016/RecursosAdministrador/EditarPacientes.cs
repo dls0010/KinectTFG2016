@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace KinectTFG2016.RecursosAdministrador
 {
+    /// <summary>
+    /// Formulario para editar los datos de los pacientes.
+    /// </summary>
     public partial class EditarPacientes : Form
     {
         public EditarPacientes()
@@ -17,6 +20,11 @@ namespace KinectTFG2016.RecursosAdministrador
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Metodo guarda los datos cambiados por parte del administrador en la BD.
+        /// </summary>
+        /// <param name="sender"></param> Boton de guardar.
+        /// <param name="e"></param> Eventos del boton.
         private void pacientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -25,6 +33,11 @@ namespace KinectTFG2016.RecursosAdministrador
 
         }
 
+        /// <summary>
+        /// Metodo que carga los datos en la tabla al cargar el formulario.
+        /// </summary>
+        /// <param name="sender"></param>  Formulario.
+        /// <param name="e"></param> Eventos formulario.
         private void EditarPacientes_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'kinectBDDRecursosAdministrador.Pacientes' Puede moverla o quitarla según sea necesario.
