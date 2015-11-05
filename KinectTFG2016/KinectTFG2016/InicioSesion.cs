@@ -41,6 +41,11 @@ namespace KinectTFG2016
                     InicioTerapeuta inicioTerapeuta = new InicioTerapeuta(textBoxUsuario.Text);
                     inicioTerapeuta.Show();
                 }
+                if (tipoUsuario == "Administrador")
+                {
+                    InicioAdministrador inicioAdministrador = new InicioAdministrador();
+                    inicioAdministrador.Show();
+                }
 
             }
             else
